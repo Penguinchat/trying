@@ -4,6 +4,6 @@
 if SHIELD_TRYING
 
 config ZMK_KEYBOARD_NAME
-    default "trying"
+    default "Trying"
 
 endif
