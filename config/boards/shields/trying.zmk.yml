@@ -1,6 +1,6 @@
 file_format: "1"
 id: trying
-name: TRYING
+name: Trying
 type: shield
 url:
 requires: [pro_micro]
