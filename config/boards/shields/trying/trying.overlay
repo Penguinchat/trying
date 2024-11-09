@@ -4,4 +4,4 @@
 };
 &mouse_encoder2 {
     status = "okay";
-}
+};
