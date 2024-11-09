@@ -1,1 +1,7 @@
 #include "trying.dtsi"
+&mouse_encoder1 {
+    status = "okay";
+};
+&mouse_encoder2 {
+    status = "okay";
+}
