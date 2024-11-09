@@ -11,7 +11,7 @@
 		columns = <5>;
 		rows = <1>;
 		map = <
-RC(0,0)   RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4) 
+RC(0,0)   
 		>;
 	};
 
@@ -21,10 +21,27 @@ RC(0,0)   RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)
 
 		input-gpios
 			= <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-      ,<&pro_micro 3 (GPIO_INT_LEVEL_HIGH)>
-      ,<&pro_micro 4 (GPIO_INT_LEVEL_HIGH)>
-      ,<&pro_micro 5 (GPIO_INT_LEVEL_HIGH)>
-      ,<&pro_micro 6 (GPIO_INT_LEVEL_HIGH)>
 			;
 	};
+    mouse_encoder1: mouse_encoder1 {
+        compatible = "alps,ec11";
+        a-gpios = <&pro_micro 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+        status = "disabled";
+    };
+
+    mouse_encoder2: mouse_endcoder2 {
+        compatible = "alps,ec11";
+        a-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+        status = "disabled";
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&mouse_encoder1 &mouse_encoder2>;
+        triggers-per-rotation = <20>;
+    };
 };
