@@ -1,7 +1,7 @@
 #include "trying.dtsi"
-&mouse_encoder1 {
+&left_encoder {
     status = "okay";
 };
-&mouse_encoder2 {
+&right_encoder {
     status = "okay";
 };
